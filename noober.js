@@ -80,7 +80,7 @@ window.addEventListener('DOMContentLoaded', function() {
     console.log(loSHeader.innerHTML)
     let response = await fetch('https://kiei451.com/api/rides.json')
     let json = await response.json()
-    
+    // PUSH ALL RIDES TO PAGE
     renderRides(json)
     loSHeader.insertAdjacentHTML('beforeend', '<br />' + json.length + ' rides found.')
     })
@@ -103,9 +103,7 @@ window.addEventListener('DOMContentLoaded', function() {
     poolArray.push(json[i])
     }}
   // PUSH POOL RIDES TO PAGE
-  let ridesDiv = document.querySelector('.rides')
-  let html = renderRides(poolArray)
-  ridesDiv.insertAdjacentHTML('beforeend', `${html}`)
+  renderRides(poolArray)
   loSHeader.insertAdjacentHTML('beforeend', '<br />' + poolArray.length + ' rides found.')
     })
 
@@ -127,9 +125,7 @@ window.addEventListener('DOMContentLoaded', function() {
       purpleArray.push(json[i])
       }}
     // PUSH PURPLE RIDES TO PAGE
-    let ridesDiv = document.querySelector('.rides')
-    let html = renderRides(purpleArray)
-    ridesDiv.insertAdjacentHTML('beforeend', `${html}`)
+    renderRides(purpleArray)
     loSHeader.insertAdjacentHTML('beforeend', '<br />' + purpleArray.length + ' rides found.')
     })
 
@@ -151,9 +147,7 @@ window.addEventListener('DOMContentLoaded', function() {
     xlArray.push(json[i])
     }}
   // PUSH XL RIDES TO PAGE
-  let ridesDiv = document.querySelector('.rides')
-  let html = renderRides(xlArray)
-  ridesDiv.insertAdjacentHTML('beforeend', `${html}`)
+  renderRides(xlArray)
   loSHeader.insertAdjacentHTML('beforeend', '<br />' + xlArray.length + ' rides found.')
     })
 
@@ -175,9 +169,7 @@ window.addEventListener('DOMContentLoaded', function() {
     xArray.push(json[i])
     }}
   // PUSH X RIDES TO PAGE
-  let ridesDiv = document.querySelector('.rides')
-  let html = renderRides(xArray)
-  ridesDiv.insertAdjacentHTML('beforeend', `${html}`)
+  renderRides(xArray)
   loSHeader.insertAdjacentHTML('beforeend', '<br />' + xArray.length + ' rides found.')
     })
 
