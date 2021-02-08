@@ -82,6 +82,7 @@ window.addEventListener('DOMContentLoaded', function() {
     let json = await response.json()
     
     renderRides(json)
+    loSHeader.insertAdjacentHTML('beforeend', '<br />' + json.length + ' rides found.')
     })
 
   // POOL
@@ -105,6 +106,7 @@ window.addEventListener('DOMContentLoaded', function() {
   let ridesDiv = document.querySelector('.rides')
   let html = renderRides(poolArray)
   ridesDiv.insertAdjacentHTML('beforeend', `${html}`)
+  loSHeader.insertAdjacentHTML('beforeend', '<br />' + poolArray.length + ' rides found.')
     })
 
   // PURPLE
@@ -128,6 +130,7 @@ window.addEventListener('DOMContentLoaded', function() {
     let ridesDiv = document.querySelector('.rides')
     let html = renderRides(purpleArray)
     ridesDiv.insertAdjacentHTML('beforeend', `${html}`)
+    loSHeader.insertAdjacentHTML('beforeend', '<br />' + purpleArray.length + ' rides found.')
     })
 
   // XL
@@ -151,6 +154,7 @@ window.addEventListener('DOMContentLoaded', function() {
   let ridesDiv = document.querySelector('.rides')
   let html = renderRides(xlArray)
   ridesDiv.insertAdjacentHTML('beforeend', `${html}`)
+  loSHeader.insertAdjacentHTML('beforeend', '<br />' + xlArray.length + ' rides found.')
     })
 
   // X
@@ -174,6 +178,7 @@ window.addEventListener('DOMContentLoaded', function() {
   let ridesDiv = document.querySelector('.rides')
   let html = renderRides(xArray)
   ridesDiv.insertAdjacentHTML('beforeend', `${html}`)
+  loSHeader.insertAdjacentHTML('beforeend', '<br />' + xArray.length + ' rides found.')
     })
 
 
