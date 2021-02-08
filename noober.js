@@ -69,5 +69,114 @@ function renderRides(ridesArray) {
 
 window.addEventListener('DOMContentLoaded', function() {
   // YOUR CODE
+
+  // ALL
+  let allridesButton = document.querySelector('#all-filter')
+    allridesButton.addEventListener('click', async function(event) {
+    event.preventDefault() // supress the browser's default click behavior
+    document.querySelector('.rides').innerHTML = ''
+    let loSHeader = document.querySelector('.loSheader')
+    loSHeader.innerHTML = `All Rides selected... one moment.`
+    console.log(loSHeader.innerHTML)
+    let response = await fetch('https://kiei451.com/api/rides.json')
+    let json = await response.json()
+    
+    renderRides(json)
+    })
+
+  // POOL
+  let poolButton = document.querySelector('#noober-pool-filter')
+    poolButton.addEventListener('click', async function(event) {
+    event.preventDefault() // supress the browser's default click behavior
+    document.querySelector('.rides').innerHTML = ''
+    let loSHeader = document.querySelector('.loSheader')
+    loSHeader.innerHTML = `Noober Pool Rides selected... one moment.`
+    console.log(loSHeader.innerHTML)
+    let response = await fetch('https://kiei451.com/api/rides.json')
+    let json = await response.json()
+  // POOL LOOP
+  let poolArray = []
+  for (let i=0; i<json.length; i++){
+    let b= levelOfService(json[i])
+    if(b=="Noober Pool"){
+    poolArray.push(json[i])
+    }}
+  // PUSH POOL RIDES TO PAGE
+  let ridesDiv = document.querySelector('.rides')
+  let html = renderRides(poolArray)
+  ridesDiv.insertAdjacentHTML('beforeend', `${html}`)
+    })
+
+  // PURPLE
+  let purpleButton = document.querySelector('#noober-purple-filter')
+    purpleButton.addEventListener('click', async function(event) {
+    event.preventDefault() // supress the browser's default click behavior
+    document.querySelector('.rides').innerHTML = ''
+    let loSHeader = document.querySelector('.loSheader')
+    loSHeader.innerHTML = `Noober Purple Rides selected... one moment.`
+    console.log(loSHeader.innerHTML)
+    let response = await fetch('https://kiei451.com/api/rides.json')
+    let json = await response.json()
+    // PURPLE LOOP
+    let purpleArray = []
+    for (let i=0; i<json.length; i++){
+      let b= levelOfService(json[i])
+      if(b=="Noober Purple"){
+      purpleArray.push(json[i])
+      }}
+    // PUSH PURPLE RIDES TO PAGE
+    let ridesDiv = document.querySelector('.rides')
+    let html = renderRides(purpleArray)
+    ridesDiv.insertAdjacentHTML('beforeend', `${html}`)
+    })
+
+  // XL
+  let xlButton = document.querySelector('#noober-xl-filter')
+    xlButton.addEventListener('click', async function(event) {
+    event.preventDefault() // supress the browser's default click behavior
+    document.querySelector('.rides').innerHTML = ''
+    let loSHeader = document.querySelector('.loSheader')
+    loSHeader.innerHTML = `Noober XL Rides selected... one moment.`
+    console.log(loSHeader.innerHTML)
+    let response = await fetch('https://kiei451.com/api/rides.json')
+    let json = await response.json()
+  // XL LOOP
+  let xlArray = []
+  for (let i=0; i<json.length; i++){
+    let b= levelOfService(json[i])
+    if(b=="Noober XL"){
+    xlArray.push(json[i])
+    }}
+  // PUSH XL RIDES TO PAGE
+  let ridesDiv = document.querySelector('.rides')
+  let html = renderRides(xlArray)
+  ridesDiv.insertAdjacentHTML('beforeend', `${html}`)
+    })
+
+  // X
+  let xButton = document.querySelector('#noober-x-filter')
+    xButton.addEventListener('click', async function(event) {
+    event.preventDefault() // supress the browser's default click behavior
+    document.querySelector('.rides').innerHTML = ''
+    let loSHeader = document.querySelector('.loSheader')
+    loSHeader.innerHTML = `NooberX Rides selected... one moment.`
+    console.log(loSHeader.innerHTML)
+    let response = await fetch('https://kiei451.com/api/rides.json')
+    let json = await response.json()
+  // X LOOP
+  let xArray = []
+  for (let i=0; i<json.length; i++){
+    let b= levelOfService(json[i])
+    if(b=="Noober X"){
+    xArray.push(json[i])
+    }}
+  // PUSH X RIDES TO PAGE
+  let ridesDiv = document.querySelector('.rides')
+  let html = renderRides(xArray)
+  ridesDiv.insertAdjacentHTML('beforeend', `${html}`)
+    })
+
+
+
 })
 
